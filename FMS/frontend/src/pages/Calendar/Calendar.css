@@ -1,0 +1,500 @@
+.calendar-page {
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.current-month {
+  font-size: 1.2rem;
+  font-weight: 500;
+  min-width: 180px;
+  text-align: center;
+}
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 992px) {
+  .calendar-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: 100%;
+}
+
+.day-name {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.calendar-day {
+  background-color: white;
+  min-height: 80px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-day:hover {
+  background-color: #f8f9fa;
+}
+
+.calendar-day.other-month {
+  color: #adb5bd;
+}
+
+.calendar-day.selected {
+  background-color: #e3f2fd;
+}
+
+.calendar-day.today {
+  background-color: #fff8e1;
+}
+
+.calendar-day.today .day-number {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-number {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.task-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.task-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.task-indicator.status-pending {
+  border: 1px solid #3a86ff;
+}
+
+.task-indicator.status-in-progress {
+  border: 1px solid #fb8500;
+}
+
+.task-indicator.status-completed {
+  border: 1px solid #06d6a0;
+}
+
+.task-indicator.status-missed {
+  border: 1px solid #e63946;
+}
+
+.more-tasks {
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-left: 2px;
+}
+
+.selected-date-tasks {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.selected-date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.selected-date-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.add-task-form-container {
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  padding: 15px;
+}
+
+.add-task-form h4 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+.tasks-for-date {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+}
+
+.task-list-for-date {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+.task-time {
+  font-weight: 500;
+  min-width: 50px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.task-description {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.task-facility {
+  color: #6c757d;
+}
+
+.task-priority {
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.task-priority.high {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.task-priority.medium {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.task-priority.low {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+@media (max-width: 1200px) {
+  .calendar-day {
+    min-height: 70px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 992px) {
+  .calendar-day {
+    min-height: 60px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .calendar-day {
+    min-height: 50px;
+    padding: 5px;
+  }
+
+  .day-number {
+    font-size: 0.9rem;
+  }
+
+  .task-indicators {
+    display: none;
+  }
+}
+
+.add-task-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.add-task-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.form-actions .btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-actions .btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.form-actions .btn-secondary:hover {
+  background-color: #d0d0d0;
+}
+
+.form-actions .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.form-actions .btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.sync-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+}
+
+.sync-btn:hover {
+  background-color: #5a6268;
+}
+
+.sync-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.sync-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  background-color: #28a745;
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.sync-message.error {
+  background-color: #dc3545;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.task-status {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-indicator {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-indicator.pending {
+  background-color: #f8f9fa;
+  color: #5a6268;
+  border: 1px solid #ddd;
+}
+
+.status-indicator.in-progress {
+  background-color: #cce5ff;
+  color: #004085;
+  border: 1px solid #b8daff;
+}
+
+.status-indicator.completed {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-indicator.missed {
+  background-color: #ffecb5;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.status-btn {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s ease;
+}
+
+.status-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-btn.active {
+  color: white;
+  border-color: transparent;
+}
+
+.status-btn.pending {
+  color: #5a6268;
+}
+
+.status-btn.pending.active {
+  background-color: #5a6268;
+  color: white;
+}
+
+.status-btn.in-progress {
+  color: #004085;
+}
+
+.status-btn.in-progress.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.status-btn.completed {
+  color: #155724;
+}
+
+.status-btn.completed.active {
+  background-color: #28a745;
+  color: white;
+}
+
