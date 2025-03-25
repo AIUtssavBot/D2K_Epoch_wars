@@ -4,4 +4,6 @@ SO as you can see i have uploaded frontend and backend folder in here and now i 
 
 ----------------------------------2------------------------------
 
-
+I have provided you some of the prompts earlier regarding the changes here like 
+Now so the integration of tasks while while  being added is not done from frontend as the tasks collection is staying empty on adding it from the calender page and make it such a way that you can take input of task from any of the page i.e calender and taks page and then the added tasks should shown in all the thhree pages i.e tasks page , calender page and tasks overview and i have a idea where features of tasks page and tasks overview  page should be merged and create a new page and then show then show us the option of different view of the tasks associated and all these tasks should be then applied genetic algo for allocation with maximum resource allocation and maximum profit and deadline meeting with respect to each user as well on a particular day which is daily and weekly wise as well 
+now where you have given a unified page code i want to delete the tasks and task overview page then and then the new page which is created should have features of both and also give me steps how to create that unified page and when and where to create
